@@ -7,11 +7,15 @@ import {connect} from 'react-redux';
 import actions from './actions';
 
 
-const {fetchNewsList} = actions;
+const {fetchNewsList, resetNewsList} = actions;
 
 class HomePage extends Component {
   componentDidMount() {
     this.loadItems()
+  }
+
+  componentWillUnmount() {
+    this.props.resetNewsList();
   }
 
   handleVisit () {
@@ -53,6 +57,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps, {fetchNewsList}
+  mapStateToProps, {fetchNewsList, resetNewsList}
 )(HomePage);
 

@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
 import {connect} from 'react-redux';
 import actions from './actions';
+import {Link} from "react-router-dom";
+import {Button} from '@material-ui/core';
+
 
 const {fetchNewsDetail, removeCurrentNews} = actions;
 
@@ -19,7 +22,8 @@ class NewDetailPage extends Component {
     const {currentNews} = this.props;
 
     return (
-      <Container className='pt-30 pb-30'>
+      <Container className='pb-30'>
+        <Link to='/'><Button>back to home</Button></Link>
         {
           currentNews ? (
             <div>
@@ -32,6 +36,7 @@ class NewDetailPage extends Component {
               }
             </div>) : null
         }
+        <Link to='/'><Button>back to home</Button></Link>
       </Container>
     );
   }

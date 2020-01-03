@@ -1,14 +1,24 @@
+.MuiCard-root {
+  height: 100%;
+}
+
+.MuiCardActionArea-root .MuiCardActionArea-focusHighlight {
+  display: none;
+}
+
+.MuiPaper-root.MuiCard-root.full-height:hover {
+  border-top: solid 2px #EEEEEE;
+  border-left: solid 2px #EEEEEE;
+  cursor: pointer;
+}
+
 .item-media {
   width: 100%;
-  height: 150px;
+  height: 200px;
 }
 
 .media-wrapper {
   //padding: 5px 10px;
-}
-
-.full-height {
-  height: 100%;
 }
 
 .MuiCardActionArea-root {
@@ -26,3 +36,13 @@
   color: #aaaaaa;
 }
 
+.news-item-link {
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+}
+
+.news-item-container {
+  display: inline-block;
+  padding: 10px;
+}

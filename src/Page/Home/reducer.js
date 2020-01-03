@@ -21,6 +21,8 @@ export default function appReducer(state = initState, action) {
       return {...state,  newsList: newsList};
     case actions.INCREASE_CURRENT_PAGE:
       return {...state,  currentPage: state.currentPage + 1};
+    case actions.RESET_NEWS_LIST:
+      return initState;
     case actions.UPDATE_FETCHING_PAGE:
       return {...state,  pageBeingLoaded: action.page};
     case actions.UPDATE_PAGINATION:

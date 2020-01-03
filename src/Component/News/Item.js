@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './news.scss'
 import PropTypes from 'prop-types';
-import {Card, CardActionArea, CardMedia, CardContent, Typography} from '@material-ui/core';
-import ReactImageFallback from "react-image-fallback";
+import {Card, CardActionArea, CardContent, Typography, CardMedia} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 
 
@@ -11,11 +10,13 @@ class NewsItem extends Component {
     const {item} = this.props;
     return (
       <Card className='full-height'>
-        <Link to={`/posts/${item.id}`}>
+        <Link to={`/posts/${item.id}`} className='news-item-link'>
           <CardActionArea>
             <div className='media-wrapper'>
-              <ReactImageFallback src={item.cover_image} fallbackImage={'https://news.ycombinator.com/y18.gif'} className='item-media' />
-              {/*<CardMedia className='item-media' image={item.cover_image} onError={onMediaFallback}/>*/}
+              <CardMedia
+                className='item-media'
+                image={item.cover_image}
+              />
             </div>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
